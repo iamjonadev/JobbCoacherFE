@@ -1,213 +1,159 @@
-# 🚀 ABC Jobbcoacher - Jobb Coacher Career Portal
+# 🚀 ABC Jobbcoacher - Swedish Career Portal
 
-**Professional career coaching and job portal application built with Angular 20 and optimized for the Swedish market.**
+A modern, SEO-optimized job portal and career coaching platform built with Angular 20, specifically designed for the Swedish market.
 
 [![Angular](https://img.shields.io/badge/Angular-20.1.0-red)](https://angular.io/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8.2-blue)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.1.13-blue)](https://tailwindcss.com/)
 [![Docker](https://img.shields.io/badge/Docker-Ready-blue)](https://www.docker.com/)
 
----
+## 🌐 Live Demo
+**[abc.adoteam.dev](https://abc.adoteam.dev)**
 
-## 🎯 **About This Project**
+## ✨ Key Features
 
-ABC Jobbcoacher is a comprehensive career coaching platform that connects job seekers with opportunities across Sweden. The application provides:
+### 🇸🇪 Swedish Market Focus
+- **290+ Swedish Municipalities**: Searchable dropdown for all kommuner
+- **Swedish Content**: Fully localized for Swedish job seekers
+- **Local SEO**: Optimized for Swedish search engines
+- **Geographic Targeting**: Location-based services and targeting
 
-- **🎓 Career Coaching Services**: CV review, interview training, and career strategy
-- **🏢 Job Matching Platform**: Connecting professionals with employers
-- **📍 Local Focus**: Serving all Swedish municipalities (kommuner)
-- **👥 Target Groups**: Students, seniors, and professionals at all career stages
+### 🔍 Advanced SEO Implementation
+- **Dynamic Meta Tags**: Automatic SEO optimization per page
+- **Structured Data**: Schema.org markup for job postings
+- **Open Graph**: Social media preview optimization
+- **XML Sitemap**: Automated search engine discovery
+- **Robots.txt**: Proper crawling directives
 
-**Live Application**: [abc.adoteam.dev](https://abc.adoteam.dev)
+### 🎨 Modern UI/UX
+- **Dark Mode Default**: Professional dark theme with light mode option
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
+- **Advanced Forms**: Reactive forms with validation and sanitization
+- **Accessibility**: WCAG compliant interface
 
----
-
-## ✨ **Key Features**
-
-### **🔍 Advanced SEO Implementation**
-- Dynamic meta tags and Open Graph optimization
-- Structured data (Schema.org) for job postings
-- XML sitemap and robots.txt for search engines
-- Social media preview optimization
-
-### **🌐 Swedish Market Optimization**
-- Searchable dropdown for all 290 Swedish municipalities
-- Swedish language content and terminology
-- Location-based services and targeting
-- Local SEO optimization for Sollentuna and surrounding areas
-
-### **🎨 Modern UI/UX**
-- Dark mode as default with light mode option
-- Responsive design with Tailwind CSS
-- Professional job portal interface
-- Accessible and user-friendly forms
-
-### **⚡ Technical Excellence**
-- Angular 20 with standalone components
-- Reactive forms with validation
-- Modular architecture and reusable components
-- Docker containerization for deployment
-
----
-
-## 🛠️ **Tech Stack**
+## 🛠️ Tech Stack
 
 | Technology | Version | Purpose |
 |------------|---------|---------|
-| **Angular** | 20.1.0 | Frontend framework |
+| **Angular** | 20.1.0 | Frontend framework with standalone components |
 | **TypeScript** | 5.8.2 | Type-safe development |
-| **Tailwind CSS** | 4.1.13 | Utility-first styling |
-| **ng-select** | 20.4.4 | Advanced dropdown components |
-| **Docker** | Latest | Containerization |
-| **Nginx** | Alpine | Web server |
+| **Tailwind CSS** | 4.1.13 | Utility-first styling framework |
+| **ng-select** | 20.4.4 | Advanced searchable dropdowns |
+| **Docker** | Latest | Production containerization |
+| **Nginx** | Alpine | Web server and reverse proxy |
 
----
+## 🚀 Quick Start
 
-## 🚀 **Quick Start**
-
-### **Prerequisites**
+### Prerequisites
 - Node.js 18+ and npm
 - Angular CLI 20+
 - Docker (for deployment)
 
-### **Development Setup**
+### Development Setup
 
-1. **Clone and Install**
-   ```bash
-   git clone <repository-url>
-   cd client04_jobbcoach.adoteam.dev/public_html
-   npm install
-   ```
-
-2. **Start Development Server**
-   ```bash
-   ng serve
-   ```
-   Navigate to `http://localhost:4200/`
-
-3. **Build for Production**
-   ```bash
-   ng build
-   ```
-
-### **Docker Deployment**
-
-From the project root:
 ```bash
-docker compose up client04_abc.adoteam.dev -d --build
+# Clone the repository
+git clone https://github.com/iamjonadev/JobbCoacherFE.git
+cd JobbCoacherFE
+
+# Install dependencies
+npm install
+
+# Start development server
+ng serve
+
+# Navigate to http://localhost:4200/
 ```
 
----
+### Production Build
 
-## 📁 **Project Structure**
+```bash
+# Build for production
+ng build --configuration production
+
+# Docker deployment
+docker compose up -d --build
+```
+
+## 📁 Project Structure
 
 ```
 src/
 ├── app/
-│   ├── components/           # Reusable UI components
-│   │   ├── navbar/          # Main navigation
-│   │   ├── footer/          # Site footer
-│   │   └── ...
-│   ├── pages/               # Route components
-│   │   ├── index/           # Home page
-│   │   ├── aboutus/         # About page
-│   │   ├── services/        # Services page
-│   │   └── contact/         # Contact page
-│   ├── services/            # Angular services
-│   │   └── seo.service.ts   # SEO management
-│   └── data/                # Static data files
-├── assets/                  # Images, styles, fonts
-├── docs/                    # Project documentation
-├── robots.txt              # Search engine directives
-├── sitemap.xml            # Site structure
-└── index.html             # Main HTML template
+│   ├── components/          # Reusable UI components
+│   │   ├── navbar/         # Main navigation
+│   │   └── footer/         # Site footer
+│   ├── pages/              # Route components
+│   │   ├── index/          # Home page
+│   │   ├── aboutus/        # About page
+│   │   ├── services/       # Services page
+│   │   └── contact/        # Contact with municipality selector
+│   ├── services/           # Angular services
+│   │   └── seo.service.ts  # SEO management service
+│   └── data/               # Swedish municipality data
+├── assets/                 # Images, icons, and static files
+├── docs/                   # Detailed documentation
+├── robots.txt             # Search engine directives
+├── sitemap.xml           # Site structure mapping
+└── index.html            # Main HTML template
 ```
 
----
+## 🎯 Core Components
 
-## 🎨 **Key Components**
+### Navigation & Layout
+- **Responsive Navbar**: Multi-page navigation with active states
+- **Professional Footer**: Company info and social links
+- **Theme Switcher**: Dark/light mode toggle
 
-### **Navigation & Layout**
-- **Navbar**: Responsive navigation with active route highlighting
-- **Footer**: Company information and social links
-- **Switcher**: Theme toggle functionality
-
-### **Core Pages**
+### Key Pages
 - **Home (/)**: Job portal overview and featured content
-- **About Us (/aboutus)**: Company mission and services
-- **Services (/services)**: Career coaching offerings
-- **Contact (/contact)**: Contact form with municipality selector
+- **About Us (/aboutus)**: Company mission and career coaching services
+- **Services (/services)**: Detailed service offerings
+- **Contact (/contact)**: Contact form with Swedish municipality selector
 
-### **Advanced Features**
-- **SEO Service**: Dynamic meta tag management
-- **Municipality Selector**: Searchable dropdown for all Swedish kommuner
-- **Form Validation**: Reactive forms with input sanitization
-- **Responsive Design**: Mobile-first approach
+### Advanced Features
+- **SEO Service**: Dynamic meta tag and structured data management
+- **Municipality Data**: Complete Swedish kommun dataset with search
+- **Form Validation**: Reactive forms with phone number sanitization
+- **Google Maps**: Integrated map with Sollentuna location
 
----
+## 🔧 Development Commands
 
-## 🔧 **Development Commands**
-
-### **Code Generation**
 ```bash
-# Generate new component
-ng generate component component-name
+# Development
+ng serve                    # Start dev server
+ng build                   # Build project
+ng test                    # Run unit tests
 
-# Generate service
-ng generate service service-name
+# Code generation
+ng generate component name # Generate component
+ng generate service name   # Generate service
 
-# Generate module
-ng generate module module-name
+# Production
+ng build --prod            # Production build
+docker compose up -d       # Deploy with Docker
 ```
 
-### **Testing**
-```bash
-# Run unit tests
-ng test
+## 🌐 SEO & Performance
 
-# Run e2e tests
-ng e2e
+### SEO Features
+- **Dynamic Titles**: Page-specific titles and descriptions
+- **Open Graph Tags**: Social media preview optimization
+- **JSON-LD Schema**: Structured data for job postings and organization
+- **XML Sitemap**: Automatic search engine discovery
+- **Meta Tags**: Comprehensive SEO meta tag implementation
 
-# Test coverage
-ng test --code-coverage
-```
-
-### **Build Variations**
-```bash
-# Development build
-ng build --configuration development
-
-# Production build
-ng build --configuration production
-
-# Build with analysis
-ng build --stats-json
-```
-
----
-
-## 🌐 **SEO & Performance**
-
-### **SEO Implementation**
-- **Meta Tags**: Dynamic titles and descriptions per route
-- **Open Graph**: Social media preview optimization
-- **Structured Data**: Schema.org markup for job postings
-- **Sitemaps**: XML sitemap for search engine discovery
-- **Robots.txt**: Search engine crawling directives
-
-### **Performance Features**
+### Performance Optimizations
 - **Tree Shaking**: Optimized bundle sizes
 - **Lazy Loading**: Route-based code splitting
-- **Image Optimization**: Responsive image handling
-- **Caching Strategy**: Efficient asset caching
+- **Image Optimization**: Responsive and optimized images
+- **Caching Strategy**: Efficient browser caching
 
 *📚 For detailed SEO documentation, see [docs/README.md](./docs/README.md)*
 
----
+## 🐳 Docker Deployment
 
-## 🐳 **Docker Configuration**
-
-### **Multi-stage Build**
+### Multi-stage Dockerfile
 ```dockerfile
 # Build stage
 FROM node:20 AS build
@@ -220,78 +166,58 @@ RUN npm run build
 # Production stage
 FROM nginx:alpine
 COPY --from=build /app/dist/app/browser /usr/share/nginx/html
+COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 ```
 
-### **Deployment**
-The application is configured for deployment with:
-- Nginx reverse proxy
-- SSL termination
-- Docker Compose orchestration
-- Production optimization
+### Docker Compose
+The application includes complete Docker Compose configuration for:
+- SSL termination with Nginx
+- Reverse proxy setup
+- Production-ready deployment
+- Multi-container orchestration
 
----
+## 🤝 Contributing
 
-## 📝 **Configuration**
+1. **Fork the repository**
+2. **Create feature branch**: `git checkout -b feature/amazing-feature`
+3. **Commit changes**: `git commit -m 'Add amazing feature'`
+4. **Push to branch**: `git push origin feature/amazing-feature`
+5. **Open Pull Request**
 
-### **Environment Setup**
-- **Development**: Local development server
-- **Production**: Docker containerized deployment
-- **Staging**: Available via Docker Compose
-
-### **Key Configuration Files**
-- `angular.json`: Angular CLI configuration
-- `package.json`: Dependencies and scripts
-- `tailwind.config.js`: Tailwind CSS configuration
-- `docker-compose.yml`: Container orchestration
-
----
-
-## 🤝 **Contributing**
-
-### **Development Workflow**
-1. Create feature branch from `main`
-2. Implement changes with proper testing
-3. Update documentation as needed
-4. Submit pull request with clear description
-
-### **Code Standards**
+### Code Standards
 - Follow Angular style guide
 - Use TypeScript strict mode
 - Implement responsive design patterns
 - Write meaningful commit messages
+- Include unit tests for new features
 
----
+## 📊 Features Implemented
 
-## 📊 **Analytics & Monitoring**
+- ✅ **Angular 20 Application**: Complete standalone component architecture
+- ✅ **Swedish Municipalities**: All 290+ kommuner with searchable dropdown
+- ✅ **Comprehensive SEO**: Meta tags, Open Graph, Schema.org, sitemap
+- ✅ **Dark Mode Default**: Professional dark theme with toggle
+- ✅ **Responsive Design**: Mobile-first Tailwind CSS implementation
+- ✅ **Contact Forms**: Reactive forms with validation and sanitization
+- ✅ **Docker Ready**: Production containerization and deployment
+- ✅ **Google Maps**: Sollentuna location integration
+- ✅ **Professional Branding**: Complete ABC Jobbcoacher branding
 
-### **SEO Tracking**
-- Google Search Console integration
-- Rich results monitoring
-- Sitemap submission and tracking
+## 🔗 Links
 
-### **Performance Monitoring**
-- Core Web Vitals tracking
-- Build size analysis
-- Runtime performance metrics
-
----
-
-## 🔗 **Related Resources**
-
-- **Live Site**: [abc.adoteam.dev](https://abc.adoteam.dev)
+- **Live Application**: [abc.adoteam.dev](https://abc.adoteam.dev)
 - **SEO Documentation**: [docs/README.md](./docs/README.md)
-- **Angular Documentation**: [angular.io](https://angular.io/)
+- **Angular Framework**: [angular.io](https://angular.io/)
 - **Tailwind CSS**: [tailwindcss.com](https://tailwindcss.com/)
 
----
+## 📄 License
 
-## 📄 **License**
-
-This project is part of the AdoteamAB multi-client hosting platform.
+This project is developed by [Adoteam](https://adoteam.dev) as part of the ABC Jobbcoacher platform.
 
 ---
 
+**Created**: October 2025  
 **Last Updated**: October 28, 2025  
-**Version**: Angular 20.1.0  
-**Status**: ✅ Production Ready
+**Status**: ✅ Production Ready  
+**Version**: Angular 20.1.0
