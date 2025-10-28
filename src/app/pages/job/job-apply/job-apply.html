@@ -1,0 +1,101 @@
+<app-navbar [navLight] = 'true' [navClass] = "'!justify-end nav-light'" [bgLight] = 'false' [navFull] = 'false' />
+
+<section class="relative table w-full py-36 bg-[url('../../assets/images/hero/bg.jpg')] bg-top bg-no-repeat bg-cover">
+    <div class="absolute inset-0 bg-primary-900/90"></div>
+    <div class="container">
+        <div class="grid grid-cols-1 text-center mt-10">
+            <h3 class="md:text-3xl text-2xl md:leading-snug tracking-wide leading-snug font-medium text-white">Någon jobbtitel</h3>
+        </div>
+    </div>
+
+    <div class="absolute text-center z-10 bottom-5 start-0 end-0 mx-3">
+        <ul class="breadcrumb tracking-[0.5px] breadcrumb-light mb-0 inline-block">
+           <li class="inline breadcrumb-item text-[15px] font-semibold duration-500 ease-in-out text-white/50 hover:text-white"><a routerLink="/">Jobb Coacher</a></li>
+            <li class="inline breadcrumb-item text-[15px] font-semibold duration-500 ease-in-out text-white" aria-current="page">Jobbformulär</li>
+        </ul>
+    </div>
+</section>
+<div class="relative">
+    <div class="shape absolute start-0 end-0 sm:-bottom-px -bottom-[2px] overflow-hidden z-1 text-slate-50 dark:text-slate-800">
+        <svg class="w-full h-auto" viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+
+<section class="relative bg-slate-50 dark:bg-slate-800 lg:py-24 py-16">
+  <div class="container">
+    <div class="md:flex justify-center">
+      <div class="lg:w-2/4 md:w-2/3">
+        <div class="p-6 bg-white dark:bg-slate-900 shadow-sm shadow-gray-200 dark:shadow-gray-700 rounded-md">
+          <form class="text-start">
+            <div class="grid grid-cols-1">
+
+              <!-- Job Category -->
+              <div class="mb-4 text-start">
+                <label for="jobcategories" class="font-semibold">Välj kategori:</label>
+                <select id="jobcategories" class="form-select form-input border border-slate-100 dark:border-slate-800 mt-1">
+                  <option value="senior">Seniorbemanning</option>
+                  <option value="student">Studentbemanning</option>
+                  <option value="coaching">Karriärcoachning</option>
+                </select>
+              </div>
+
+              <!-- Name -->
+              <div class="mb-4 text-start">
+                <label class="font-semibold" for="RegisterName">Namn:</label>
+                <input id="RegisterName" type="text" class="form-input border border-slate-100 dark:border-slate-800 mt-1" placeholder="Ditt namn">
+              </div>
+
+              <!-- Email -->
+              <div class="mb-4 text-start">
+                <label class="font-semibold" for="LoginEmail">E‑postadress:</label>
+                <input id="LoginEmail" type="email" class="form-input border border-slate-100 dark:border-slate-800 mt-1" placeholder="namn@example.com">
+              </div>
+
+              <!-- Phone -->
+              <div class="mb-4 text-start">
+                <label class="font-semibold" for="PhoneNo">Telefonnummer:</label>
+                <input id="PhoneNo" type="tel" class="form-input border border-slate-100 dark:border-slate-800 mt-1" placeholder="+46 70 123 45 67">
+              </div>
+
+              <!-- Kommun -->
+              <div class="mb-4 text-start">
+                <label for="kommun" class="font-semibold">Kommun:</label>
+                <select id="kommun" class="form-select form-input border border-slate-100 dark:border-slate-800 mt-1">
+                  <option value="upplands-vasby">Upplands Väsby</option>
+                  <option value="stockholm">Stockholm</option>
+                  <option value="solna">Solna</option>
+                  <option value="sundbyberg">Sundbyberg</option>
+                  <option value="täby">Täby</option>
+                  <!-- fler kommuner kan läggas till -->
+                </select>
+              </div>
+
+              <!-- Cover Letter -->
+              <div class="mb-2 text-start">
+                <label for="comments" class="font-semibold">Personligt brev:</label>
+                <textarea name="comments" id="comments" class="form-input border border-slate-100 dark:border-slate-800 mt-1 textarea" placeholder="Skriv ett kort meddelande..."></textarea>
+              </div>
+
+              <!-- Upload CV -->
+              <div class="mb-4 text-start">
+                <label class="font-semibold" for="multiple_files">Ladda upp CV:</label>
+                <input class="relative form-input border border-slate-100 dark:border-slate-800 file:h-10 file:-mx-3 file:-my-2 file:cursor-pointer file:rounded-none file:border-0 file:px-3 file:text-neutral-700 bg-clip-padding px-3 py-1.5 file:me-3 mt-1" id="multiple_files" type="file" multiple>
+              </div>
+
+              <!-- Submit -->
+              <div>
+                <button type="submit" id="submit" name="send" class="py-1 px-5 inline-block font-semibold tracking-wide border align-middle transition duration-500 ease-in-out text-base text-center rounded-md bg-primary hover:bg-primary-700 border-primary hover:border-primary-700 text-white">
+                  Skicka ansökan
+                </button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<app-footer/>

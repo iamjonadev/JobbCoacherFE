@@ -1,0 +1,165 @@
+<app-navbar [navLight] = 'true' [navClass] = "'!justify-end nav-light'" [bgLight] = 'false' [navFull] = 'false' />
+
+<section class="relative table w-full py-36 bg-[url('../../assets/images/hero/bg.jpg')] bg-top bg-no-repeat bg-cover">
+    <div class="absolute inset-0 bg-primary-900/90"></div>
+    <div class="container">
+        <div class="grid grid-cols-1 text-center mt-10">
+            <h3 class="md:text-3xl text-2xl md:leading-snug tracking-wide leading-snug font-medium text-white mb-3">{{data?.title ? data?.title : 'Introducing new tools for your design.'}}</h3>
+
+            <ul class="list-none mt-6">
+                <li class="inline-block text-white/50 mx-5"> <span class="text-white block">Förfatare :</span> <span class="block">{{data?.auther ? data?.auther : 'Google'}}</span></li>
+                <li class="inline-block text-white/50 mx-5"> <span class="text-white block">Datum :</span> <span class="block">{{data?.date ? data?.date :'19 June, 2024'}}</span></li>
+                <li class="inline-block text-white/50 mx-5"> <span class="text-white block">Tid :</span> <span class="block">8 Min Läsning</span></li>
+            </ul>
+        </div><!--end grid-->
+    </div><!--end container-->
+
+    <div class="absolute text-center z-10 bottom-5 start-0 end-0 mx-3">
+        <ul class="breadcrumb tracking-[0.5px] breadcrumb-light mb-0 inline-block">
+           <li class="inline breadcrumb-item text-[15px] font-semibold duration-500 ease-in-out text-white/50 hover:text-white"><a routerLink="/">Jobb Coacher</a></li>
+           <li class="inline breadcrumb-item text-[15px] font-semibold duration-500 ease-in-out text-white/50 hover:text-white"><a routerLink="/blogs">Nyheter</a></li>
+            <li class="inline breadcrumb-item text-[15px] font-semibold duration-500 ease-in-out text-white" aria-current="page">Single</li>
+        </ul>
+    </div>
+</section><!--end section-->
+<div class="relative">
+    <div class="shape absolute start-0 end-0 sm:-bottom-px -bottom-[2px] overflow-hidden z-1 text-white dark:text-slate-900">
+        <svg class="w-full h-auto" viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+        </svg>
+    </div>
+</div>
+
+<section class="relative md:py-24 py-16">
+    <div class="container">
+        <div class="grid md:grid-cols-12 grid-cols-1 gap-[30px]">
+            <div class="lg:col-span-8 md:col-span-6">
+                <div class="relative overflow-hidden rounded-md shadow-sm dark:shadow-gray-800">
+
+                    <img [src]="data?.image ? data?.image : 'assets/images/blog/09.jpg'" alt="">
+
+                    <div class="p-6">
+                      <p class="text-slate-400">
+                        På ABC Jobbcoacher arbetar vi med att matcha rätt person med rätt uppdrag – oavsett om du är student som söker extrajobb eller senior med lång erfarenhet. Vår styrka ligger i att förstå både individens behov och arbetsgivarens krav.
+                      </p>
+
+                      <p class="text-slate-400 italic border-x-4 border-primary rounded-ss-xl rounded-ee-xl mt-3 p-3">
+                        " Genom lokal förankring och personlig coachning skapar vi hållbara lösningar för både arbetssökande och företag. "
+                      </p>
+
+                      <p class="text-slate-400 mt-3">
+                        Vi samarbetar med kommuner och arbetsgivare i Stockholmsområdet, inklusive Upplands Väsby, Täby och Solna. Vårt mål är att göra rekrytering enklare, mer träffsäker – och mänsklig.
+                      </p>
+                    </div>
+
+                </div>
+
+                <div class="p-6 rounded-md shadow-sm dark:shadow-gray-800 mt-8">
+                  <h5 class="text-lg font-semibold">Lämna en kommentar:</h5>
+
+                  <form class="mt-8">
+                    <div class="grid lg:grid-cols-12 lg:gap-6">
+                      <div class="lg:col-span-6 mb-5">
+                        <div class="text-start">
+                          <label for="name" class="font-semibold">Ditt namn:</label>
+                          <div class="form-icon relative mt-2">
+                            <i data-feather="user" class="size-4 absolute top-3 start-4"></i>
+                            <input name="name" id="name" type="text"
+                              class="w-full py-2 px-3 text-[14px] border border-gray-200 dark:border-gray-800 dark:bg-slate-900 dark:text-slate-200 rounded h-10 outline-none bg-transparent !ps-11"
+                              placeholder="Skriv ditt namn">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="lg:col-span-6 mb-5">
+                        <div class="text-start">
+                          <label for="email" class="font-semibold">Din e‑postadress:</label>
+                          <div class="form-icon relative mt-2">
+                            <i data-feather="mail" class="size-4 absolute top-3 start-4"></i>
+                            <input name="email" id="email" type="email"
+                              class="w-full py-2 px-3 text-[14px] border border-gray-200 dark:border-gray-800 dark:bg-slate-900 dark:text-slate-200 rounded h-10 outline-none bg-transparent !ps-11"
+                              placeholder="namn@example.com">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="grid grid-cols-1">
+                      <div class="mb-5">
+                        <div class="text-start">
+                          <label for="comments" class="font-semibold">Din kommentar:</label>
+                          <div class="form-icon relative mt-2">
+                            <i data-feather="message-circle" class="size-4 absolute top-3 start-4"></i>
+                            <textarea name="comments" id="comments"
+                              class="w-full py-2 px-3 text-[14px] border border-gray-200 dark:border-gray-800 dark:bg-slate-900 dark:text-slate-200 rounded outline-none bg-transparent !ps-11 h-28"
+                              placeholder="Skriv ditt meddelande här..."></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <button type="submit" id="submit" name="send"
+                      class="py-1 px-5 inline-block font-semibold tracking-wide border align-middle transition duration-500 ease-in-out text-base text-center bg-primary hover:bg-primary-700 border-primary hover:border-primary-700 text-white rounded-md w-full">
+                      Skicka meddelande
+                    </button>
+                  </form>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4 md:col-span-6">
+                <div class="sticky top-20">
+                    <h5 class="text-lg font-medium bg-gray-50 dark:bg-slate-800 shadow-sm dark:shadow-gray-800 rounded-md p-2 text-center">Förfatare</h5>
+                    <div class="text-center mt-8">
+                        <img src="assets/images/team/male.png" class="size-20 mx-auto rounded-full shadow-sm mb-4" alt="">
+
+                        <a href="#" (click)="$event.preventDefault()" class="text-lg font-medium hover:text-primary transition-all duration-500 ease-in-out h5">Haider</a>
+                        <p class="text-slate-400">Innehållsskribent</p>
+                    </div>
+
+                    <h5 class="text-lg font-medium bg-gray-50 dark:bg-slate-800 shadow-sm dark:shadow-gray-800 rounded-md p-2 text-center mt-8">Sociala medier</h5>
+                    <ul class="list-none text-center mt-8 ">
+                        <li class="inline mx-[2px]" *ngFor="let item of social"><a href="#" (click)="$event.preventDefault()" class="size-8 font-semibold tracking-wide align-middle transition duration-500 ease-in-out inline-flex items-center text-center justify-center text-base border border-gray-100 dark:border-gray-800 rounded-md text-slate-400 hover:border-primary hover:text-white hover:bg-primary"><i [attr.data-feather]="item" class="size-4"></i></a></li>
+                    </ul><!--end icon-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container lg:mt-24 mt-16">
+        <div class="grid grid-cols-1 pb-8 text-center">
+            <h3 class="mb-4 md:text-[26px] md:leading-normal text-2xl leading-normal font-semibold">Relaterade Nyheter</h3>
+
+            <!-- <p class="text-slate-400 dark:text-slate-300 max-w-xl mx-auto">Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 30000+ companies worldwide.</p> -->
+        </div><!--end grid-->
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-[30px] mt-8">
+            <div *ngFor="let item of blogData | slice:0:3" class="group relative overflow-hidden bg-white dark:bg-slate-900 rounded-md shadow-sm shadow-gray-200 dark:shadow-gray-700">
+                <div class="relative overflow-hidden">
+                    <img [src]="item.image" class="scale-110 group-hover:scale-100 transition-all duration-500" alt="">
+                </div>
+
+                <div class="relative p-6">
+                    <div class="absolute start-6 -top-4">
+                        <span class="bg-primary text-white text-[12px] px-2.5 py-1 font-semibold rounded-full h-5">{{item.tag}}</span>
+                    </div>
+
+                    <div class="">
+                        <div class="flex mb-4">
+                            <span class="text-slate-400 text-sm"><i class="uil uil-calendar-alt text-slate-900 dark:text-white me-2"></i>{{item.date}}</span>
+                            <span class="text-slate-400 text-sm ms-3"><i class="uil uil-clock text-slate-900 dark:text-white me-2"></i>5 min read</span>
+                        </div>
+
+                        <a [routerLink]="['/blog-detail', item.id]" class="title text-lg font-semibold hover:text-primary duration-500 ease-in-out">{{item.title}}</a>
+
+                        <div class="flex justify-between items-center mt-3">
+                            <a [routerLink]="['/blog-detail', item.id]" class="inline-block font-semibold tracking-wide border align-middle transition text-base text-center relative p-0 border-none after:content-[''] after:absolute after:h-px after:w-0 after:end-0 after:bottom-0 after:start-0 after:transition-all after:duration-500 hover:after:w-full hover:after:end-auto hover:text-primary after:bg-primary duration-500 ease-in-out">Read More <i class="uil uil-arrow-right"></i></a>
+                            <span class="text-slate-400 text-sm">by <a href="#" (click)="$event.preventDefault()" class="text-slate-900 dark:text-white hover:text-primary dark:hover:text-primary font-medium">{{item.auther}}</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end content-->
+        </div><!--end grid-->
+    </div><!--end container-->
+</section>
+<app-footer/>

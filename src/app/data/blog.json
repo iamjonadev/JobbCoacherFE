@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "image": "assets/images/blog/01.jpg",
+    "tag": "Karriärtips",
+    "date": "12th Oct 2025",
+    "title": "Så skriver du ett CV som sticker ut i Upplands Väsby",
+    "auther": "Haider"
+  },
+  {
+    "id": 2,
+    "image": "assets/images/blog/02.jpg",
+    "tag": "Seniorbemanning",
+    "date": "5th Oct 2025",
+    "title": "Varför senior kompetens är en tillgång för småföretag",
+    "auther": "Haider"
+  },
+  {
+    "id": 3,
+    "image": "assets/images/blog/03.jpg",
+    "tag": "Studentbemanning",
+    "date": "28th Sep 2025",
+    "title": "Flexibla extrajobb för studenter – så hittar du balansen",
+    "auther": "Haider"
+  },
+  {
+    "id": 4,
+    "image": "assets/images/blog/04.jpg",
+    "tag": "Kommunfokus",
+    "date": "20th Sep 2025",
+    "title": "Rekrytering per kommun – framtiden för lokal matchning",
+    "auther": "Haider"
+  },
+  {
+    "id": 5,
+    "image": "assets/images/blog/05.jpg",
+    "tag": "Onboarding",
+    "date": "10th Sep 2025",
+    "title": "Så gör vi onboarding enklare för svenska småföretag",
+    "auther": "Haider"
+  },
+  {
+    "id": 6,
+    "image": "assets/images/blog/06.jpg",
+    "tag": "Karriärcoaching",
+    "date": "1st Sep 2025",
+    "title": "Tre vanliga misstag i intervjun – och hur du undviker dem",
+    "auther": "Haider"
+  }
+]

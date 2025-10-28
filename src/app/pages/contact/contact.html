@@ -1,0 +1,197 @@
+<app-navbar [navLight] = 'false' [navClass] = "'!justify-end'" [bgLight] = 'true' [navFull] = 'false' />
+
+<div class="container-fluid relative mt-20">
+    <div class="grid grid-cols-1">
+        <div class="w-full leading-[0] border-0">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2027.3642892528837!2d17.920290177513813!3d59.46035137467805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f98c3876dda6b%3A0x5c5f1c878bb0b92b!2zU2rDtsOkbmdzdsOkZ2VuIDE3LCAxOTIgNzIgU29sbGVudHVuYQ!5e0!3m2!1sen!2sse!4v1761655004419!5m2!1sen!2sse" class="w-full h-[500px]" allowfullscreen></iframe>
+          <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39206.002432144705!2d-95.4973981212445!3d29.709510002925988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c16de81f3ca5%3A0xf43e0b60ae539ac9!2sGerald+D.+Hines+Waterwall+Park!5e0!3m2!1sen!2sin!4v1566305861440!5m2!1sen!2sin" style="border:0" class="w-full h-[500px]" allowfullscreen></iframe> -->
+        </div>
+    </div><!--end grid-->
+</div>
+
+<section class="relative lg:py-24 py-16">
+    <div class="container">
+        <div class="grid md:grid-cols-12 grid-cols-1 items-center gap-[30px]">
+            <div class="lg:col-span-7 md:col-span-6">
+                <img src="assets/images/svg/contact.svg" alt="">
+            </div>
+
+            <div class="lg:col-span-5 md:col-span-6">
+              <div class="lg:ms-5">
+                <div class="bg-white dark:bg-slate-900 rounded-md shadow-sm shadow-gray-200 dark:shadow-gray-700 p-6">
+                  <h3 class="mb-6 text-2xl leading-normal font-semibold">Skicka meddelande</h3>
+
+                  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                    <p class="mb-0" id="error-msg"></p>
+                    <div id="simple-msg"></div>
+
+                    <div class="grid lg:grid-cols-12 lg:gap-6">
+                      <!-- Namn -->
+                      <div class="lg:col-span-6 mb-5">
+                        <label for="name" class="font-semibold">För- och efternamn *</label>
+                        <input formControlName="name" id="name" type="text"
+                          class="form-input border border-slate-100 dark:border-slate-800 mt-2"
+                          placeholder="Skriv ditt namn">
+                      </div>
+
+                      <!-- E-post -->
+                      <div class="lg:col-span-6 mb-5">
+                        <label for="email" class="font-semibold">E-postadress *</label>
+                        <input formControlName="email" id="email" type="email"
+                          class="form-input border border-slate-100 dark:border-slate-800 mt-2"
+                          placeholder="namn@exempel.se">
+                      </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-12 lg:gap-6">
+                      <!-- Telefon -->
+                      <!-- Telefon -->
+                      <div class="lg:col-span-6 mb-5 relative">
+                        <label for="phone" class="font-semibold">Telefon *</label>
+                        <div class="flex items-center mt-2 border border-slate-100 dark:border-slate-800 rounded-md bg-white dark:bg-slate-900">
+                          <span class="px-3 text-gray-500 dark:text-gray-400 select-none">+46</span>
+                          <input
+                            id="phone"
+                            type="tel"
+                            formControlName="phone"
+                            (input)="sanitizePhone()"
+                            class="form-input flex-1 border-none focus:ring-0 bg-transparent"
+                            placeholder="7x 251 81 52"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- Hemkommun -->
+                      <div class="lg:col-span-6 mb-5 relative">
+                        <label for="kommun" class="font-semibold">Hemkommun *</label>
+                        <input
+                          type="text"
+                          id="kommun"
+                          [value]="kommunSearch"
+                          (input)="onKommunInput($event)"
+                          (focus)="showDropdown = true"
+                          (keydown)="handleKey($event)"
+                          class="form-input border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 mt-2 w-full rounded-md"
+                          placeholder="Sök eller välj kommun"
+                        />
+
+                        <ul *ngIf="showDropdown && filteredKommuner.length > 0"
+                            class="absolute z-10 mt-1 w-full bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-md max-h-48 overflow-y-auto shadow">
+                          <li *ngFor="let k of filteredKommuner; let i = index"
+                              (click)="selectKommun(k)"
+                              [class.bg-primary]="i === activeIndex"
+                              [class.text-white]="i === activeIndex"
+                              class="px-3 py-2 cursor-pointer hover:bg-primary hover:text-white">
+                            {{ k }}
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <!-- Kort beskrivning -->
+                    <div class="mb-5">
+                      <label for="about" class="font-semibold">Beskriv kort om dig *</label>
+                      <textarea formControlName="about" id="about"
+                        class="form-input border border-slate-100 dark:border-slate-800 mt-2 textarea"
+                        placeholder="Berätta kort om dig själv"></textarea>
+                    </div>
+
+                    <!-- Arbetsförmedlingen -->
+                    <div class="mb-5">
+                      <label for="af" class="font-semibold">När blev du inskriven hos Arbetsförmedlingen?</label>
+                      <input
+                        formControlName="af"
+                        id="af"
+                        type="date"
+                        class="form-input border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 mt-2 w-full rounded-md"
+                        placeholder="Välj datum"
+                      />
+
+                      <small class="text-sm text-gray-500 dark:text-gray-400">
+                        Vi använder detta för att förstå din nuvarande status.
+                      </small>
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit"
+                      class="py-2 px-6 inline-block font-semibold tracking-wide border align-middle transition duration-500 ease-in-out text-base text-center bg-primary hover:bg-primary-700 text-white rounded-md">
+                      Skicka
+                    </button>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+        </div>
+    </div><!--end container-->
+
+    <div class="container lg:mt-24 mt-16">
+        <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-[30px]">
+            <div class="text-center px-6">
+                <div class="relative text-transparent">
+                    <div class="size-14 bg-primary/5 text-primary rounded-xl text-2xl flex align-middle justify-center items-center mx-auto shadow-xs dark:shadow-gray-800">
+                        <i class="uil uil-phone"></i>
+                    </div>
+                </div>
+
+                <div class="content mt-7">
+                    <h5 class="title h5 text-lg font-semibold">Phone</h5>
+                    <p class="text-slate-400 mt-3">
+                      Ring oss för personlig rådgivning eller bokning av tjänster.
+                    </p>
+
+                    <div class="mt-5">
+                        <a href="tel:+152534-468-854" class="btn btn-link text-primary hover:text-primary after:bg-primary transition duration-500">+46-729880033</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center px-6">
+                <div class="relative text-transparent">
+                    <div class="size-14 bg-primary/5 text-primary rounded-xl text-2xl flex align-middle justify-center items-center mx-auto shadow-xs dark:shadow-gray-800">
+                        <i class="uil uil-envelope"></i>
+                    </div>
+                </div>
+
+                <div class="content mt-7">
+                    <h5 class="title h5 text-lg font-semibold">Email</h5>
+                    <p class="text-slate-400 mt-3">
+                      Vi svarar snabbt och hjälper dig hitta rätt lösning.
+                    </p>
+
+                    <div class="mt-5">
+                        <a href="mailto:contact@example.com" class="btn btn-link text-primary hover:text-primary after:bg-primary transition duration-500">info@abcjobbcoacher.se</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center px-6">
+                <div class="relative text-transparent">
+                    <div class="size-14 bg-primary/5 text-primary rounded-xl text-2xl flex align-middle justify-center items-center mx-auto shadow-xs dark:shadow-gray-800">
+                        <i class="uil uil-map-marker"></i>
+                    </div>
+                </div>
+
+                <div class="content mt-7">
+                    <h5 class="title h5 text-lg font-semibold">Location</h5>
+                    <p class="text-slate-400 mt-3">Sjöängsvägen 17, <br> 192 72 Sollentuna, Sverige</p>
+
+                    <div class="mt-5">
+                        <a href="#" (click)="togggleModal($event)"
+                        data-type="iframe" class="video-play-icon read-more lightbox btn btn-link text-primary hover:text-primary after:bg-primary transition duration-500">View on Google map</a>
+                    </div>
+                </div>
+            </div>
+        </div><!--end grid-->
+    </div><!--end container-->
+</section>
+
+<app-footer/>
+
+<div class="fixed z-999 flex items-center justify-center bg-gray-900 bg-opacity-50 dark:bg-opacity-80 w-full h-full top-0 start-0" *ngIf="isOpen">
+    <div class="modal-content relative">
+      <span class="text-white absolute -top-6 -end-6 cursor-pointer" (click)="togggleModal($event)"><i class="mdi mdi-close inline-flex items-center justify-center text-2xl"></i></span>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2027.3642892528837!2d17.920290177513813!3d59.46035137467805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f98c3876dda6b%3A0x5c5f1c878bb0b92b!2zU2rDtsOkbmdzdsOkZ2VuIDE3LCAxOTIgNzIgU29sbGVudHVuYQ!5e0!3m2!1sen!2sse!4v1761655004419!5m2!1sen!2sse" class="w-full h-[500px]" allowfullscreen></iframe>
+      <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d39206.002432144705!2d-95.4973981212445!3d29.709510002925988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c16de81f3ca5%3A0xf43e0b60ae539ac9!2sGerald+D.+Hines+Waterwall+Park!5e0!3m2!1sen!2sin!4v1566305861440!5m2!1sen!2sin"  allowfullscreen></iframe> -->
+    </div>
+</div>
